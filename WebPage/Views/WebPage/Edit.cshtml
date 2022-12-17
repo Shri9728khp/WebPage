@@ -1,0 +1,66 @@
+﻿@model WebPage.Models.WebFrom
+
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-7 offset-3">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="text-center text-danger">Edit New</h1>
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-action="Edit">
+                        <div class="form-group">
+                            <label asp-for="Date"></label>
+                            <input type="hidden" asp-for="Id" />
+                            <input type="text" asp-for="Date" class="form-control" placeholder="Enter Date" />
+                        </div>
+                        @*<div class="col-sm-6 col-lg-4 mt-2 mt-sm-3" data-toggle="tooltip" data-placement="top" title="Date From">
+                                <div class="form-group mb-0 input-block">
+                                    @(Html.Kendo().DatePicker().Name("DateFrom").Format("dd-MMM-yyyy").HtmlAttributes(new { style = "width: 100%", id = "DateFrom" }))
+                                </div>
+                            </div>*@
+                        <div class="form-group">
+                            <label asp-for="Name"></label>
+                            <input type="text" asp-for="Name" class="form-control" placeholder="Enter Name" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email"></label>
+                            <input type="text" asp-for="Email" class="form-control" placeholder="Enter Email" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Mobile"></label>
+                            <input type="text" asp-for="Mobile" class="form-control" placeholder="Enter Mobile" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Salary"></label>
+                            <input type="text" asp-for="Salary" class="form-control" placeholder="Enter Salary" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Location"></label>
+                            <input type="text" asp-for="Location" class="form-control" placeholder="Enter Location" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Department"></label>
+                            <input type="text" asp-for="Department" class="form-control" placeholder="Enter Department" />
+                        </div>
+                        @*<div class="form-row">
+                                <div class="col-md-12 mb-1">
+                                    <button class="btn btn-primary btnSubmit" type="submit">Submit</button>
+                                </div>
+                            </div>*@
+                        <div class="form-group">
+                            <input typeof="button" class="btn btn-primary btnSubmit" type="submit" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

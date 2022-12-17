@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebPage.Models.WebFrom>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class=" container">
+
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h1 class="text-center text-primary"> Application Record </h1>
+            <table class="table table-bordered">
+
+                <a class="btn btn-sm btn-success" asp-controller="WebPage" asp-action="Create">Create</a>
+
+                <p class="text-center text-success">@TempData["error"]</p>
+                <tr class="text-center">
+                    <th>Id</th>
+                    <th>date</th>>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>Salary</th>
+                    <th>Location</th>
+                    <th>Department</th>
+                    <th>Edit</th>
+                    <th>Action</th>
+                </tr>
+                @foreach (var Data in Model)
+                {
+                    <tr class="text-center">
+                        <td>@Data.Id</td>
+                        <td>@Data.Date</td>
+                        <td>@Data.Name</td>
+                        <td>@Data.Mobile</td>
+                        <td>@Data.Salary</td>
+                        <td>@Data.Location</td>
+                        <td>@Data.Department</td>
+                        <td>
+                            <a class="btn btn-sm btn-warning" asp-controller="WebPage" asp-action="Edit" asp-route-id="@Data.Id">Edit</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-sm btn-danger" asp-controller="WebPage" asp-action="Delete" asp-route-id="@Data.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
